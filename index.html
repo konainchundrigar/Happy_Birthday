@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color:#fff;
+    text-align:center;
+    overflow:hidden;
+}
+section{
+    display:none;
+    height:100vh;
+    width:100%;
+    padding:40px;
+    animation: fade 1s ease;
+}
+.active{
+    display:block;
+}
+h1{
+    margin-top:40px;
+    font-size:40px;
+    color:#ff4d6d;
+}
+p{
+    margin:20px auto;
+    max-width:600px;
+    font-size:18px;
+    line-height:1.6;
+}
+button{
+    margin-top:30px;
+    padding:14px 30px;
+    font-size:16px;
+    background:linear-gradient(45deg,#ff4d6d,#ff758f);
+    border:none;
+    border-radius:30px;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,77,109,0.5);
+    transition:0.3s;
+}
+button:hover{
+    transform:scale(1.1);
+}
+img{
+    /* margin-top:27px; */
+    max-width:220px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+.gallery img{
+    max-width:180px;
+    margin:10px;
+    border-radius:15px;
+    animation: float 3s ease-in-out infinite;
+}
+.cake{
+    width:220px;
+    cursor:pointer;
+    transition:0.5s;
+}
+.cut{
+    transform:rotate(-10deg) scale(0.9);
+}
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section id="page1" class="active">
+    <h1>Happy Birthday Meri Piyari BiYYa  ❤️</h1>
+    <p>
+        Today Is Just Your Day Meri Shezadi ❤️
+    </p>
+    <!-- HER MAIN PIC -->
+    <img src="Main.jpeg" alt="Her Photo">
+    <br>
+    <button onclick="nextPage('page2')">Click here For More 💖</button>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2">
+    <h1> Our Beautiful & Unforgetable Memories ✨</h1>
+    <p>Meri Piyari Shezadi ki Kuch Piyari Pics </p>
+    <div class="gallery">
+        <img src="img1.jpeg">
+        <img src="img4.jpeg">
+        <img src="img2.jpeg">
+        <img src="img5.jpeg">
+    </div>
+    <button onclick="nextPage('page3')">Cake Time 🎂</button>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3">
+    <h1>Make a Wish 🎉</h1>
+    <p>Cake par click karo 💕</p>
+    <img src="birthday-cake.png" class="cake" id="cake">
+</section>
+
+<script>
+function nextPage(id){
+    document.querySelectorAll('section').forEach(sec=>{
+        sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+}
+
+document.getElementById("cake").addEventListener("click",function(){
+    this.classList.add("cut");
+    this.src="birthday-cake.png";
+});
+</script>
+
+</body>
+</html>
